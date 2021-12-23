@@ -1,3 +1,89 @@
+/* EVENTSIDAN  */
+
+#img1 {
+  float: center;
+  width:  240px;
+  height: 240px;
+  object-fit: cover;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.img{
+  margin: 4px;
+  background-color:#c3dbe9;
+  width: 100%;
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(234, 238, 241, 0.4);
+}
+.center{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.center .title{
+  color: rgb(37, 34, 34);
+  font-size: 55px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: rgb(37, 34, 34);
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.center .btns button:first-child{
+  color: rgb(0, 0, 0);
+  background: white;
+}
+.btns button:first-child:hover{
+  background: rgb(152, 181, 235);
+  color: rgb(0, 0, 0);
+}
+.center .btns button:last-child:hover{
+  background: rgb(152, 181, 235);
+  color: rgb(0, 0, 0); 
+}
+
+/* EVENTSIDAN SLUT */
+
+
 .header {
     background-color: white;
     width: 100%;

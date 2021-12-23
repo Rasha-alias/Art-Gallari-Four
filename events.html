@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Events</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="nav d-flex navbar-light justify-content-between">
+            <a class="navbar-brand " href="index.html">
+                <img src="Images/logga1.png" alt="Hundtass" width="40" height="40" class="d-inline-block">
+                Art Gallery Four
+            </a>
+            <div class="d-flex my-auto">
+                <a class="nav-link" href="#">Nyheter</a>
+                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link pe-5" href="Galleri.html">Galleri</a>
+                <a class="nav-link-inlogg ps-5" href="#">
+                    <span class="fas fa-user pe-3"></span>Inlogg</a>
+            </div>
+        </nav>
+        <div class="content-1">
+        </div>
+    </div>
+
+
+    <div class="img"> <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnODtkOoIPAW4Hep1VTvFEdRkVqH0UqZTDMA&usqp=CAU"
+            class="rounded float-start" id="img1" alt="...">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWSwb721MkNk3o4MPkTGtl3dVffIHtz4HOg&usqp=CAU"
+            class="rounded float-end" id="img1" alt="...">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-WPPZqWv02QOOxkYO3myZeJqMADPJ11irXA&usqp=CAU"
+            class="rounded float-end" id="img1" alt="...">
+        <img src="https://olymp-arts.world/wp-content/uploads/xvision.jpg.pagespeed.ic.-m9gbjOpCf.jpg"
+            class="rounded float-end" id="img1" alt="...">
+
+
+
+    </div>
+    <div class="center">
+        <div class="title">Föreställning</div>
+        <div class="btns">
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal1">Köp
+                biljetter</button>
+
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal2">Se kalender</button>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Biljettköp</h4>
+                </div>
+                <div class="modal-body">
+                    <style>
+                        table,
+                        tr,
+                        td {
+                            font-family: monospace;
+                            font-weight: bold;
+                        }
+
+                        #result {
+                            font-weight: bold;
+                            color: #0000FF;
+                        }
+
+                        h1 {
+                            color: #0000FF;
+                            font-family: monospace;
+                            text-align: center;
+                        }
+                    </style>
+                    <form onsubmit="return validate()" name="book">
+                        <center>
+                            <h1>ONLINE BOKNING</h1>
+                            <table>
+                                <tr>
+                                    <td>Namn</td>
+                                    <td><input type="text" name="name" placeholder="Förnamn" required>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Efternamn</td>
+                                    <td><input type="text" name="moviename" autocomplete="on" placeholder="Efternamn"
+                                            required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telefonnummer</td>
+                                    <td> <input type="tel" name="phone" placeholder="Telefonnummer" required>
+                                </tr>
+                                <tr>
+                                    <td>Datum</td>
+                                    <td><input type="date" name="showdate"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Antal vuxna</td>
+                                    <td><input type="number" name="tickets" id="tickets" min="1" max="10"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Antal barn (0-13)</td>
+                                    <td><input type="number" name="childrens" id="childrens" min="1" max="5"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><button type="submit" name="Book My Show">Boka</button></td>
+                                    <td><button type="reset" name="reset">Reset</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="result"></div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <script>
+                                function validate() {
+                                    var x = document.getElementById("tickets").value;
+                                    var y = document.getElementById("childrens").value;
+                                    var date = document.book.showdate.value;
+                                    var currdate = new Date();
+                                    var curr = Date.parse(currdate.toString());
+                                    var bookdate = Date.parse(date);
+                                    var adult = x * 200;
+                                    var childern = y * 100;
+                                    var total = adult + childern;
+
+                                    if (bookdate < curr) {
+                                        alert("Show date and time should be either current date or future date");
+                                        return false;
+                                    }
+                                    if (y >= x) {
+                                        alert("No of tickets should be greater than the no of children");
+                                        return false;
+
+                                    }
+                                    if (y < x) {
+                                        document.getElementById("result").innerHTML = "Your approximate ticket amount is " + total + " INR";
+                                        return false;
+
+                                    }
+                                }
+                            </script>
+                        </center>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Stäng rutan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Kalender</h4>
+                </div>
+                <div class="modal-body">
+                    <p><img src="https://michelzbinden.com/images/2021/vi/sv/kalender-december-2021-50ms.jpg"
+                            class="img-thumbnail" alt="..."></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Stäng rutan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        <div class="content-2"></div>
+        <div class="container  my-container-2 mt-4 ms-4">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-1 d-flex justify-content-center">
+                    <img class="instgram-icon" src="Images/instgram.png" alt="">
+                    <img class="facebook-icon" src="Images/facebook.png" alt="">
+
+                </div>
+
+                <div class="col-3 d-flex justify-content-center">
+                    <span class="address">Konstgatan 22, Stockholm</span>
+                </div>
+
+                <div class=" col-3 d-flex justify-content-center">
+                    <span class="fas fa-phone-alt"></span>
+                    <span class="phone ms-2">018-123 45 72</span>
+                </div>
+
+                <div class="col-3 d-flex justify-content-center">
+                    <span class="website">Artgallaryfour@art.se</span>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-8 d-flex justify-content-center">
+                    <div class="content-3 ">
+                        <form action="#">
+                            <div class="form mt-4">Registrera din e-post för att få förtur till biljettförsäljning
+                                <input type="email" placeholder="Din e-post address" required class="ms-3 me-3">
+                                <button type="submit">Anmäl</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
